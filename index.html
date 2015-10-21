@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>svg demo</title>
+
+    <style type="text/css">
+        svg:active,
+        svg:hover {
+            cursor: default;
+        }
+
+        svg {
+            border: 2px inset #CCC;
+        }
+
+        .dashboard {
+            margin: 0 auto;
+            width: 500px;
+
+        }
+
+        p span {
+            display: inline-block;
+            width: 35px;
+        }
+
+        p span:first-child {
+            display: inline-block;
+            width: 80px;
+        }
+
+        #block-banner {
+            display: block;
+            background-color: white;
+            opacity: 0.75;
+            z-index: 20;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .block-help {
+            margin: auto;
+            margin-top: 50px;
+            width: 400px;
+            padding: 10px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+    </style>
+</head>
+<body>
+<div id="block-banner" class="hidden">
+    <div class="block-help">
+        <h3>How to use:</h3>
+
+        <p>Place three points on the area by clicking.</p>
+
+        <p>You will receive parallelogram and circle, plotted on points' base.</p>
+
+        <p>You can find info about parallelogram's and circle's area "S", which is the same for them, under the
+            figures.</p>
+
+        <p>Also there you can find info about red points' coordinates</p>
+
+        <p>Feel free to gently move red points around - when you finish figures and coordinates data will be
+            updated.</p>
+
+        <p>Use "Reset" button to start over.</p>
+
+        <p>All values are shown in pixels.</p>
+
+        <small>Svg shapes demo by Vasily Malakhov</small>
+        <button id="help-close">Got it!</button>
+    </div>
+</div>
+<div class="dashboard">
+    <svg width="500" height="500">
+    </svg>
+
+    <p class="point-coords"><span>Point one:</span><span>X=</span><span></span><span>Y=</span><span></span></p>
+
+    <p class="point-coords"><span>Point two:</span><span>X=</span><span></span><span>Y=</span><span></span></p>
+
+    <p class="point-coords"><span>Point three:</span><span>X=</span><span></span><span>Y=</span><span></span></p>
+
+    <p>S:<span id="figure-area"></span></p>
+    <button id="reset">Reset</button>
+    <button id="help-open">Help</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
